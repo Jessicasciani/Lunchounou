@@ -1,0 +1,90 @@
+
+* {
+   margin: 0;
+   padding: 0;
+   list-style-type: none;
+   text-decoration: none;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   -o-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+img {
+   max-width: 100%;
+}
+
+
+.card {
+   position: relative;
+   background: white;
+   max-width: 480px;
+   margin: 20px 0px;
+   box-shadow: 1px 0px 4px 1px $grey;
+   .header {
+      background-size: cover;
+      min-height: 350px;
+         .icon a .fa-heart-o {
+         position: absolute;
+         left: 86.5%;
+         bottom: 32%;
+         color: $blue;
+         font-size: 1.3em;
+         font-weight: bold;
+         padding: 11px;
+         border-radius: 50%;
+         box-shadow: 0px 2px 3px 0px $grey;
+      }
+   }
+   .text {
+      .food {
+         color: $black;
+         font-weight:bold;
+         text-align: left;
+         font-weight: normal;
+         text-transform: uppercase;
+         letter-spacing: 0.1em;
+         margin: 6px 30px;
+      }
+      .fa-clock-o {
+         color: $grey;
+         margin: 0 30px;
+      }
+      .fa-users {
+         color: $grey;
+      }
+   }
+   .stars {
+      margin: 10px 30px;
+      li a i {
+         color: $yellow;
+      }
+   }
+   .info {
+      margin: 10px 30px;
+      color: $black;
+   }
+   .btn {
+      display: block;
+      background: $blue;
+      color: white;
+      position: relative;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      text-align: center;
+      padding: 10px;
+      transition: 250ms;
+      &:hover {
+         background: #93f4ff;
+         transition: 250ms;
+      }
+      a {
+        text-decoration:none;
+        color:white;
+      }
+   }
+}
+
+.recipe-container {
+  margin: 10px 20px;
+}

@@ -1,0 +1,7 @@
+<%= simple_form_for(@recipe) do |f| %>
+  <%= f.input :name, label: false, placeholder: 'Recipe name'%>
+  <%= f.input :time, label: false, placeholder: 'How long?' %>
+  <%= f.input :serves, label: false, placeholder: 'How many people?' %>
+  <%= f.input :description, label: false, placeholder: 'Describe your Recipe' %> <!-- javascript form where you can add fields -->
+  <%= f.submit class: "abtn abtn-lg abtn-prime" %>
+<% end %>

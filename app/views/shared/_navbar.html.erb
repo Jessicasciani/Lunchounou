@@ -7,9 +7,9 @@
   <!-- Right Navigation -->
   <% if user_signed_in? %>
     <div class="navbar-wagon-right hidden-xs hidden-sm">
-      <a href="" class="navbar-wagon-item navbar-wagon-link">Recipes</a>
-      <a href="" class="navbar-wagon-item navbar-wagon-link">Groups</a>
-      <a href="" class="navbar-wagon-item navbar-wagon-link">Messages</a>
+      <h2 class="navbar-wagon-item navbar-wagon-link"><%= link_to "Create a recipe", new_recipe_path %></h2>
+      <h2 class="navbar-wagon-item navbar-wagon-link"><%= link_to "Recipes", recipes_path %></h2>
+      <h2 class="navbar-wagon-item navbar-wagon-link"><%= link_to "Groups"%></h2>
       <!-- Profile picture with dropdown list -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
@@ -17,6 +17,7 @@
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li><a href="#">Profile</a></li>
             <li><a href="#">Dashboard</a></li>
+            <li class="navbar-wagon-item navbar-wagon-link"><%= link_to "Messages"%></li>
             <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
           </ul>
         </div>

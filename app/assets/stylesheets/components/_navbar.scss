@@ -30,9 +30,11 @@
 }
 
 /* Basic navbar item */
-.navbar-wagon-item {
+.navbar-wagon-item a {
   cursor: pointer;
   padding: 0 20px;
+  text-decoration:none;
+  color: grey;
 }
 
 /* Navbar link */

@@ -1,1 +1,35 @@
 <h1>all recipes</h1>
+
+<div class="recipe-container">
+  <div class="row">
+    <% @recipes.each do |recipe| %>
+      <div class="col-xs-12 col-md-4">
+        <div class="card">
+         <div class="header" style="background-image: linear-gradient(rgba(50,50,50,0.2), rgba(50,50,50,0.1)), url('<%= "http://img.taste.com.au/UZVXAdo7/taste/2016/11/chinese-egg-noodle-and-vegetable-stir-fry-94186-1.jpeg" %>')";>
+          <div class="icon">
+            <a href="#"><i class="fa fa-heart-o"></i></a>
+          </div>
+         </div>
+         <div class="text">
+            <h1 class="food"> <%=recipe.name %></h1>
+            <i class="fa fa-clock-o"><%= recipe.time %> min</i>
+            <i class="fa fa-users"><%= recipe.serves %> serves</i>
+            <div class="stars">
+              <li>
+                <a href="#"><i class="fa fa-star"></i></a>
+                <a href="#"><i class="fa fa-star"></i></a>
+                <a href="#"><i class="fa fa-star"></i></a>
+                <a href="#"><i class="fa fa-star"></i></a>
+                <a href="#"><i class="fa fa-star-o"></i></a>
+              </li>
+            </div>
+            <p class="info"> <%= recipe.description %> ...</p>
+          </div>
+          <div class="btn">
+            <%= link_to "Let's Cook!", recipe_path(recipe) %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
