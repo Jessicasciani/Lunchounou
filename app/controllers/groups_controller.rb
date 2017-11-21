@@ -7,7 +7,7 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(group_params)
     @group.save
-    @membership = Membership.create(id: current_user.id, group_id: @group.id)
+    @membership = Membership.create(user_id: current_user.id, group_id: @group.id)
     redirect_to group_path(@group)
   end
 
