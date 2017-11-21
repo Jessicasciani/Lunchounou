@@ -37,14 +37,18 @@ img {
       }
    }
    .text {
+        margin-top: 15px;
       .food {
-         color: $black;
-         font-weight:bold;
-         text-align: left;
-         font-weight: normal;
-         text-transform: uppercase;
-         letter-spacing: 0.1em;
-         margin: 6px 30px;
+        color: $black;
+        font-weight:bold;
+        text-align: left;
+        font-weight: normal;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin: 6px 30px;
+        height: 110px;
+        font-size: 34px;
+        width: 360px;
       }
       .fa-clock-o {
          color: $grey;
@@ -94,3 +98,15 @@ img {
   padding:30px;
   color:#575757;
 }
+
+.discover-btn {
+  color: white;
+  background-color: $blue;
+  padding: 10px 15px;
+  border-radius: 3px;
+  &:hover {
+    text-decoration: none;
+    color:white;
+  }
+}
+
