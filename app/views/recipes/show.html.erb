@@ -1,2 +1,20 @@
-<h1> <%= @recipe.name %></h1>
-<h1> <%= @recipe.description %></h1>
+<div class="full-screen-container">
+
+  <div class="container-recipe">
+    <%= cl_image_tag @recipe.photo, class: "banner-image-recipe" %>
+    <div class="recipe-info">
+      <h1> <%=@recipe.name.upcase%></h1>
+      <h3> <%=@recipe.time%><i class="fa fa-clock-o" aria-hidden="true"></i></h3>
+      <h3> <%=@recipe.serves%><i class="fa fa-users" aria-hidden="true"></i></h3>
+    </div>
+    <div class="recipe-description text-center">
+      <h1>RECETTE</h1>
+      <h2> <%= @recipe.description %></h2>
+    </div>
+  </div>
+
+</div>
+
+
+
+

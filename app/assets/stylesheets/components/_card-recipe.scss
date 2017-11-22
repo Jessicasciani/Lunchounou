@@ -93,17 +93,14 @@ img {
   margin: 0px 20px;
 }
 
-.title-recipe {
-  margin: 0px;
-  padding:30px;
-  color:#575757;
-}
+
 
 .discover-btn {
   color: white;
-  background-color: $blue;
-  padding: 10px 15px;
-  border-radius: 3px;
+  font-size: 24px;
+  background-color: #6ee0ea;
+  border-radius: 26px;
+  padding: 11px 21px;
   &:hover {
     text-decoration: none;
     color:white;

@@ -1,0 +1,43 @@
+<div class="navbar-home">
+  <!-- Logo -->
+  <a href="/" class="navbar-wagon-brand">
+    <%= image_tag "cutlery.png" %>
+  </a>
+
+  <!-- Right Navigation -->
+  <% if user_signed_in? %>
+    <div class="navbar-wagon-right hidden-xs hidden-sm">
+      <h2 class="navbar-home-item navbar-wagon-link"><%= link_to "Create a recipe", new_recipe_path %></h2>
+      <h2 class="navbar-home-item navbar-wagon-link"><%= link_to "Recipes", recipes_path %></h2>
+      <h2 class="navbar-home-item navbar-wagon-link"><%= link_to "My groups", groups_path%></h2>
+      <!-- Profile picture with dropdown list -->
+      <div class="navbar-home-item">
+        <div class="dropdown">
+          <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Dashboard</a></li>
+            <li class="navbar-wagon-item navbar-wagon-link"><%= link_to "Create a group", new_group_path %></li>
+            <li class="navbar-wagon-item navbar-wagon-link"><%= link_to "Messages"%></li>
+            <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Dropdown appearing on mobile only -->
+    <div class="navbar-wagon-item hidden-md hidden-lg">
+      <div class="dropdown">
+        <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li><a href="#">Recipes</a></li>
+          <li><a href="#">Messages</a></li>
+        </ul>
+      </div>
+    </div>
+  <% else %>
+    <div class="navbar-wagon-right hidden-xs hidden-sm">
+      <h2 class="navbar-wagon-item navbar-wagon-link"><%= link_to "Recipes", recipes_path %></h2>
+      <h2 class="navbar-wagon-item navbar-wagon-link"><%= link_to "Login", new_user_session_path %></h2>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,78 @@
+// INDEX
+
+.full-recipe-container {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.title-recipe {
+  margin: 0px;
+  padding: 30px;
+  color: white;
+}
+
+// SHOW
+
+
+.container-recipe {
+  color: $black;
+  width: 670px;
+  position: relative;
+  margin: 0px auto;
+  box-shadow: 1px 2px 3px rgb(190, 190, 190);
+  min-height: 700px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.banner-image-recipe {
+  height: 380px;
+  width: 670px;
+  margin: 20px;
+  background-size:cover;
+  position: absolute;
+  left: -20px;
+  top: -20px;
+}
+
+
+
+.recipe-info {
+  position: absolute;
+  top: 370px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h3 {
+    font-size: 18px;
+    margin-top: 0;
+  }
+  h1 {
+    font-size: 30px;
+    margin-top: 30px;
+  }
+  i {
+    padding-left: 5px;
+  }
+}
+
+.recipe-description {
+  position: absolute;
+  top: 75%;
+  h1 {
+    font-size: 30px;
+  }
+    h2 {
+  font-size: 16px;
+  }
+}
+
+.full-screen-container {
+  background: #e8e8e8;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+
