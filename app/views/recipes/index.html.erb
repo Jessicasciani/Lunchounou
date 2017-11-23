@@ -8,14 +8,10 @@
         <div class="col-xs-12 col-md-4">
           <div class="card">
             <% if recipe.photo? %>
-              <div class="header" style="background-image: linear-gradient(rgba(50,50,50,0.2), rgba(50,50,50,0.1)), url('<%= cl_image_path recipe.photo %>')";>
+              <div class="header" style="background-image: linear-gradient(rgba(50,50,50,0.2), rgba(50,50,50,0.1)), url('<%= cl_image_path recipe.photo %>')";></div>
             <% else %>
-              <div class="header" style="background-image: linear-gradient(rgba(50,50,50,0.2), rgba(50,50,50,0.1)), url('<%= "http://img.taste.com.au/UZVXAdo7/taste/2016/11/chinese-egg-noodle-and-vegetable-stir-fry-94186-1.jpeg" %>')";>
+              <div class="header" style="background-image: linear-gradient(rgba(50,50,50,0.2), rgba(50,50,50,0.1)), url('<%= "http://img.taste.com.au/UZVXAdo7/taste/2016/11/chinese-egg-noodle-and-vegetable-stir-fry-94186-1.jpeg" %>')";></div>
             <% end %>
-            <div class="icon">
-              <a href="#"><i class="fa fa-heart-o"></i></a>
-            </div>
-           </div>
            <div class="text">
               <h1 class="food"> <%=recipe.name %></h1>
               <i class="fa fa-clock-o"></i> <%= recipe.time %> min

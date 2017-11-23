@@ -6,11 +6,11 @@
   </ul>
 <% end %>
 <%= simple_form_for(@recipe) do |f| %>
-  <%= f.input :name, label: false, placeholder: 'Recipe name'%>
-  <%= f.input :time, label: false, placeholder: 'Time (in minutes)?' %>
-  <%= f.input :serves, label: false, placeholder: 'How many people?' %>
-  <%= f.input :description, as: :text, label: false, placeholder: 'Describe your Recipe' %> <!-- javascript form where you can add fields -->
-  <%= f.input :photo %>
+  <%= f.input :name, label: false, placeholder: 'Recipe name', class: "form-control"%>
+  <%= f.input :time, label: false, placeholder: 'Time (in minutes)?', class: "form-control" %>
+  <%= f.input :serves, label: false, placeholder: 'How many people?', class: "form-control" %>
+  <%= f.input :description, as: :text, label: false, placeholder: 'Describe your Recipe', class: "form-control" %> <!-- javascript form where you can add fields -->
+  <%= f.input :photo, class: "form-control" %>
   <%= f.input :photo_cache, as: :hidden %>
   <%= f.submit class: "abtn abtn-lg abtn-prime" %>
 <% end %>

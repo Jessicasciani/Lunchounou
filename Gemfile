@@ -8,6 +8,8 @@ end
 gem 'carrierwave', '~> 1.2'
 
 gem 'devise'
+gem 'devise_invitable', '~> 1.7.0'
+
 gem 'figaro'
 
 gem 'bootstrap-sass'

@@ -15,6 +15,7 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
+    @invitation = Invitation.new
   end
 
   def index

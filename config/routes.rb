@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   end
 
   resources :groups
+  resources :invitation
+
 
 
 end
