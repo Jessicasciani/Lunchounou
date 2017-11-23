@@ -1,10 +1,18 @@
-<h1>Group Admin</h1>
-<% @groups_admin.each do |group| %>
-  <%= group.name %>
-<% end %>
-
-<h1>Group Joined</h1>
-  <% @groups_joined.each do |group| %>
-  <%= group.name %>
-<% end %>
+<div class="group-container-full" style="background-image: linear-gradient(rgba(50,50,50,0.2), rgba(50,50,50,0.1)), url('<%= image_path 'cover-group.jpeg' %>')";>
+  <div class="group-container">
+    <div class="group-cards">
+      <h1>MY GROUPS</h1>
+      <div class="group-card">
+        <% @groups_admin.each do |group| %>
+          <%= group.name %>
+        <% end %>
+      </div>
+      <div class="group-card">
+        <% (@groups_joined - @groups_admin).each do |group| %>
+          <%= group.name %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
