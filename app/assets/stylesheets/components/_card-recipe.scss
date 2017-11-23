@@ -17,7 +17,6 @@ img {
 
 .card {
   border-radius: 3px;
-
   overflow: hidden;
   position: relative;
   background: white;
@@ -41,6 +40,8 @@ img {
    }
    .text {
         margin-top: 15px;
+        font-family: Source sans pro;
+        color: $black;
       .food {
         color: $black;
         font-weight:bold;
@@ -55,10 +56,12 @@ img {
       }
       .fa-clock-o {
          color: $grey;
-         margin: 0 30px;
+         margin: 0 5px 0px 30px;
       }
       .fa-users {
-         color: $grey;
+        color: $grey;
+        margin-left: 15px;
+        margin-right: 5px;
       }
    }
    .stars {

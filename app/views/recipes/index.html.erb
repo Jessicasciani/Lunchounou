@@ -18,8 +18,8 @@
            </div>
            <div class="text">
               <h1 class="food"> <%=recipe.name %></h1>
-              <i class="fa fa-clock-o"> <%= recipe.time %> min</i>
-              <i class="fa fa-users"> <%= recipe.serves %> serves</i>
+              <i class="fa fa-clock-o"></i> <%= recipe.time %> min
+              <i class="fa fa-users"></i> <%= recipe.serves %> serves
               <div class="stars">
                 <li>
                   <a href="#"><i class="fa fa-star"></i></a>
@@ -29,7 +29,7 @@
                   <a href="#"><i class="fa fa-star-o"></i></a>
                 </li>
               </div>
-              <p class="info"> <%= recipe.description %> ...</p>
+              <p class="info"> <%= recipe.description[0...70] %> ...</p>
             </div>
             <div class="btn">
               <%= link_to "Let's Cook!", recipe_path(recipe) %>
