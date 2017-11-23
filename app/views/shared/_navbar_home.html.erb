@@ -13,7 +13,8 @@
       <!-- Profile picture with dropdown list -->
       <div class="navbar-home-item">
         <div class="dropdown">
-          <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+          <div class="avatar dropdown-toggle" id="nabar-wagon-menu" data-toggle="dropdown" style="background-image: url('<%= cl_image_path current_user.photo %>')">
+          </div>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li><a href="#">Profile</a></li>
             <li><a href="#">Dashboard</a></li>

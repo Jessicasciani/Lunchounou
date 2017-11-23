@@ -1,17 +1,32 @@
 <div class="group-container-full" style="background-image: linear-gradient(rgba(50,50,50,0.2), rgba(50,50,50,0.1)), url('<%= image_path 'cover-group.jpg' %>')";>
-  <div class="group-container">
-    <div class="group-cards">
-      <h1>MY GROUPS</h1>
-      <div class="group-card">
+  <div class="container">
+    <div class="group-cards box-shadow">
+      <h1 class="text-center">MY GROUPS</h1>
         <% @groups_admin.each do |group| %>
-          <%= group.name %>
+          <div class="group-card box-shadow">
+            <h2><%= group.name.upcase %></h2>
+            <div class="group-avatars">
+              <% group.memberships.each do |membership| %>
+                <div class="group-avatar box-shadow">
+                  <%= cl_image_tag membership.user.photo %>
+                </div>
+              <% end %>
+              <%= link_to "", group_path(group), class: "link-transparent" %>
+            </div>
+          </div>
         <% end %>
-      </div>
-      <div class="group-card">
         <% (@groups_joined - @groups_admin).each do |group| %>
-          <%= group.name %>
+          <div class="group-card box-shadow">
+            <h2><%= group.name.upcase %></h2>
+            <div class="group-avatars">
+              <% group.memberships.each do |membership| %>
+                <div class="group-avatar box-shadow">
+                  <%= cl_image_tag membership.user.photo %>
+                </div>
+              <% end %>
+            </div>
+          </div>
         <% end %>
-      </div>
     </div>
   </div>
 </div>
