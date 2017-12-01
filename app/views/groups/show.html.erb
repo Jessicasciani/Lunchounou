@@ -9,7 +9,9 @@
     </div>
     <div class="group-recipes group-background-card flex-column text-center">
       <h2>GROUP RECIPES</h2>
-
+      <% if @group.group_recipes.count == 0 %>
+        <p>No recipes ...</p>
+      <% else %>
 
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
           <!-- Indicators -->
@@ -40,7 +42,7 @@
             <span class="sr-only">Next</span>
           </a>
         </div>
-
+      <% end %>
     </div>
     <div class="invitation-form flex-column">
       <p>Invite a friend to join <%= @group.name %></p>
