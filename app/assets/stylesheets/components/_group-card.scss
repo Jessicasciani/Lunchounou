@@ -65,3 +65,29 @@
   background: black;
   opacity: 0;
 }
+
+.flex {
+  display:flex;
+  align-items:center;
+}
+
+.btn-favorite {
+  background:transparent;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  margin-bottom: 72px;
+  border-color: transparent;
+  &:focus {
+    outline: none;
+  }
+  .fa.fa-heart {
+    font-size: 25px;
+    color: rgb(138, 216, 225);
+    &:hover {
+      font-size:28px;
+    }
+  }
+}
+
+

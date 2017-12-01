@@ -1,0 +1,6 @@
+<div class="form-invite">
+  <%= simple_form_for [group, invitation] do |f| %>
+    <%= f.association :user, label_method: :first_name %>
+    <%= f.submit 'Send invitation', class: "btn btn-lg btn-invite" %>
+  <% end %>
+</div>

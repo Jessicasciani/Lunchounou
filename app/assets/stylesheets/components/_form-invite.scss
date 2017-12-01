@@ -1,0 +1,31 @@
+.btn-invite {
+  width: 130px;
+  font-size: 16px;
+  background-color:rgb(138, 216, 225);
+  color:white;
+  margin-top: 10px;
+  border-radius: 5px;
+  input {
+    font-size: 16px;
+  }
+}
+
+.form-invite {
+  select {
+    width: 130px;
+  }
+}
+
+.invitation-form {
+    margin: 10Px 20px;
+    background-color: white;
+    height: 290px;
+    width: 260px;
+    text-align: center;
+    line-height: 2.2em;
+    p {
+      font-size: 20px;
+      margin: 15px 20px;
+      line-height: 1.3em;
+  }
+}

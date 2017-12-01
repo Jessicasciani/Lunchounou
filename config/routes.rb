@@ -7,9 +7,11 @@ Rails.application.routes.draw do
     resources :reviews, only: [:create]
   end
 
-  resources :groups
-  resources :invitation
+  resources :groups do
+    resources :invitations, only: [:create, :destroy]
+    resources :memberships
+  end
 
-
+  resources :group_recipes, only: [ :create ]
 
 end

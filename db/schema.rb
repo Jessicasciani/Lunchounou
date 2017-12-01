@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171123170221) do
+ActiveRecord::Schema.define(version: 20171128190138) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "group_recipes", force: :cascade do |t|
+    t.integer  "group_id"
+    t.integer  "recipe_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_group_recipes_on_group_id", using: :btree
+    t.index ["recipe_id"], name: "index_group_recipes_on_recipe_id", using: :btree
+  end
 
   create_table "groups", force: :cascade do |t|
     t.datetime "created_at",  null: false
@@ -40,7 +49,6 @@ ActiveRecord::Schema.define(version: 20171123170221) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "status"
     t.index ["group_id"], name: "index_memberships_on_group_id", using: :btree
     t.index ["user_id"], name: "index_memberships_on_user_id", using: :btree
   end
@@ -82,6 +90,8 @@ ActiveRecord::Schema.define(version: 20171123170221) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "group_recipes", "groups"
+  add_foreign_key "group_recipes", "recipes"
   add_foreign_key "groups", "users", column: "creator_id"
   add_foreign_key "invitations", "groups"
   add_foreign_key "invitations", "users"

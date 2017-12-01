@@ -1,0 +1,4 @@
+<%= simple_form_for [group, membership] do |f| %>
+  <%= hidden_field_tag :invitation, invitation.id %>
+  <%= f.submit "Accept", class: "abtn abtn-lg abtn-prime" %>
+<% end %>

@@ -2,6 +2,11 @@
   <div class="container">
     <div class="group-cards box-shadow">
       <h1 class="text-center">MY GROUPS</h1>
+      <% current_user.invitations.each do |invitation| %>
+        <h1>Invitation to <%= invitation.group.name %>
+        <%= render 'memberships/form', group: invitation.group, membership: @membership, invitation: invitation %>
+        <%= link_to "Decline", group_invitation_path(invitation.group, invitation), method: :delete %>
+      <% end %>
         <% @groups_admin.each do |group| %>
           <div class="group-card box-shadow">
             <h2><%= group.name.upcase %></h2>
@@ -24,10 +29,10 @@
                   <%= cl_image_tag membership.user.photo %>
                 </div>
               <% end %>
+              <%= link_to "", group_path(group), class: "link-transparent" %>
             </div>
           </div>
         <% end %>
     </div>
   </div>
 </div>
-
