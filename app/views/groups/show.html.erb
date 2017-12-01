@@ -2,52 +2,53 @@
   <h1 class="group-title"><%= @group.name.upcase %></h1>
 </div>
 
-<div class="container">
-  <div class="flex-column">
-    <div class="group-schedule group-background-card text-center">
-      <h2>GROUP SCHEDULE</h2>
-    </div>
-    <div class="group-recipes group-background-card flex-column text-center">
-      <h2>GROUP RECIPES</h2>
-      <% if @group.group_recipes.count == 0 %>
-        <p>No recipes ...</p>
-      <% else %>
+<div class="showpage-group" style="background-image: url('https://image.freepik.com/free-photo/white-textured-wall-background-texture_1368-6402.jpg');">
+  <div class="container">
+    <div class="group-show-container flex-column">
+      <div class="group-schedule group-background-card text-center">
+        <h2>GROUP SCHEDULE</h2>
+      </div>
+      <div class="group-recipes group-background-card flex-column text-center">
+        <h2>GROUP RECIPES</h2>
+        <% if @group.group_recipes.count == 0 %>
+          <p>No recipes ...</p>
+        <% else %>
 
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-          <!-- Indicators -->
-          <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-          </ol>
+          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
 
-          <div class="carousel-inner">
-            <div class="item active">
-                <%= cl_image_tag @group.group_recipes.first.recipe.photo %>
-              </div>
-            <% @group.group_recipes[1..-1].each do |gr| %>
-              <div class="item">
-                <%= cl_image_tag gr.recipe.photo %>
-              </div>
-            <% end %>
+            <div class="carousel-inner">
+              <div class="item active">
+                  <%= cl_image_tag @group.group_recipes.first.recipe.photo %>
+                </div>
+              <% @group.group_recipes[1..-1].each do |gr| %>
+                <div class="item">
+                  <%= cl_image_tag gr.recipe.photo %>
+                </div>
+              <% end %>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+              <span class="sr-only">Next</span>
+            </a>
           </div>
-
-          <!-- Left and right controls -->
-          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-      <% end %>
-    </div>
-    <div class="invitation-form flex-column">
-      <p>Invite a friend to join <%= @group.name %></p>
-      <%= render 'invitations/form', group: @group, invitation: @invitation %>
+        <% end %>
+      </div>
+      <div class="invitation-form flex-column">
+        <p>Invite a friend to join <%= @group.name %></p>
+        <%= render 'invitations/form', group: @group, invitation: @invitation %>
+      </div>
     </div>
   </div>
 </div>
-
