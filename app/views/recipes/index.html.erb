@@ -31,14 +31,13 @@
                 </li>
               </div>
             </div>
-            <div class="btn">
-              <%= link_to "Let's Cook!", recipe_path(recipe) %>
-            </div>
+              <%= link_to "Let's Cook!", recipe_path(recipe), class: "btn" %>
           </div>
         </div>
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
+              <h2>MY GROUPS</h2>
             <% current_user.groups_joined.each do |group| %>
               <% unless group.has_recipe?(recipe)%>
                 <p><%= link_to group.name, group_recipes_path(group_recipe: {group_id: group, recipe_id: recipe}), method: :post %></p>

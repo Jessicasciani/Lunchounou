@@ -12,8 +12,7 @@
             <h2><%= group.name.upcase %></h2>
             <div class="group-avatars">
               <% group.memberships.each do |membership| %>
-                <div class="group-avatar box-shadow">
-                  <%= cl_image_tag membership.user.photo %>
+                <div class="group-avatar box-shadow" style="background-image: url('<%= cl_image_path membership.user.photo %>');">
                 </div>
               <% end %>
               <%= link_to "", group_path(group), class: "link-transparent" %>
@@ -26,7 +25,8 @@
             <div class="group-avatars">
               <% group.memberships.each do |membership| %>
                 <div class="group-avatar box-shadow">
-                  <%= cl_image_tag membership.user.photo %>
+                  <div class="group-avatar box-shadow" style="background-image: url('<%= cl_image_path membership.user.photo %>');">
+                </div>
                 </div>
               <% end %>
               <%= link_to "", group_path(group), class: "link-transparent" %>
