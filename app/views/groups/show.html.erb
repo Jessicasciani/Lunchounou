@@ -6,6 +6,12 @@
   <div class="container">
     <div class="group-show-container flex-column">
       <div class="group-schedule group-background-card text-center">
+        <div class="group-avatars">
+        <% @group.memberships.each do |membership| %>
+          <div class="group-avatar box-shadow" style="background-image: url('<%= cl_image_path membership.user.photo %>');">
+          </div>
+        <% end %>
+      </div>
         <h2>GROUP SCHEDULE</h2>
       </div>
       <div class="group-recipes group-background-card flex-column text-center">
