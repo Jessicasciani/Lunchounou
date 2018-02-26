@@ -31,7 +31,8 @@
 
 .banner-group {
   height: 325px;
-  background-size:1456px 322px;
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   display: flex;
   align-items:center;
@@ -56,6 +57,14 @@
 
 .group-show-container {
   margin: 50px 1px;
+}
+
+.card-group {
+  height: 200px;
+  width: 400px;
+  background-size: cover;
+  background-position: center;
+  margin: 20px;
 }
 
 

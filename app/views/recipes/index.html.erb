@@ -38,6 +38,7 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <h2>MY GROUPS</h2>
+              <% if current_user %>
             <% current_user.groups_joined.each do |group| %>
               <% unless group.has_recipe?(recipe)%>
                 <p><%= link_to group.name, group_recipes_path(group_recipe: {group_id: group, recipe_id: recipe}), method: :post %></p>
@@ -45,6 +46,7 @@
                 <p> You've already added this recipe to <%= group.name %> </p>
               <% end %>
             <% end %>
+          <% end %>
           </div>
         </div>
       <% end %>
