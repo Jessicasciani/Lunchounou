@@ -6,21 +6,23 @@
     <div class="row">
       <% @recipes.each do |recipe| %>
         <div class="col-xs-12 col-md-4">
+
           <div class="card">
+
             <% if recipe.photo? %>
               <div class="header" style="background-image: linear-gradient(rgba(50,50,50,0.2), rgba(50,50,50,0.1)), url('<%= cl_image_path recipe.photo %>')";></div>
             <% else %>
               <div class="header" style="background-image: linear-gradient(rgba(50,50,50,0.2), rgba(50,50,50,0.1)), url('<%= "http://img.taste.com.au/UZVXAdo7/taste/2016/11/chinese-egg-noodle-and-vegetable-stir-fry-94186-1.jpeg" %>')";></div>
             <% end %>
-           <div class="text">
-            <div class="flex">
-              <h1 class="food"> <%=recipe.name %></h1>
-              <button type="button" class="btn-favorite" data-toggle="modal" data-target="#myModal">
-              <i class="fa fa-heart"></i>
-            </button>
-            </div>
-            <i class="fa fa-clock-o"></i> <%= recipe.time %> min
-            <i class="fa fa-users"></i> <%= recipe.serves %> serves
+            <div class="text">
+              <div class="flex">
+                <h1 class="food"> <%=recipe.name %></h1>
+                <button type="button" class="btn-favorite" data-toggle="modal" data-target="#myModal">
+                <i class="fa fa-heart"></i>
+                </button>
+              </div>
+              <i class="fa fa-clock-o"></i> <%= recipe.time %> min
+              <i class="fa fa-users"></i> <%= recipe.serves %> serves
               <div class="stars">
                 <li>
                   <a href="#"><i class="fa fa-star"></i></a>
@@ -34,21 +36,24 @@
               <%= link_to "Let's Cook!", recipe_path(recipe), class: "btn" %>
           </div>
         </div>
+
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <h2>MY GROUPS</h2>
               <% if current_user %>
-            <% current_user.groups_joined.each do |group| %>
-              <% unless group.has_recipe?(recipe)%>
-                <p><%= link_to group.name, group_recipes_path(group_recipe: {group_id: group, recipe_id: recipe}), method: :post %></p>
-                <% else %>
-                <p> You've already added this recipe to <%= group.name %> </p>
+                <% current_user.groups_joined.each do |group| %>
+                  <% unless group.has_recipe?(recipe)%>
+                    <p><%= link_to group.name, group_recipes_path(group_recipe: {group_id: group, recipe_id: recipe}), method: :post %></p>
+                  <% else %>
+                    <p> You've already added this recipe to <%= group.name %> </p>
+                  <% end %>
+                <% end %>
               <% end %>
-            <% end %>
-          <% end %>
+            </div>
           </div>
         </div>
+
       <% end %>
     </div>
   </div>
