@@ -5,15 +5,32 @@
 <div class="showpage-group">
   <div class="container">
     <div class="group-show-container flex-column">
-      <div class="group-schedule group-background-card text-center">
-        <div class="group-avatars">
-        <% @group.memberships.each do |membership| %>
-          <div class="group-avatar box-shadow" style="background-image: url('<%= cl_image_path membership.user.photo %>');">
-          </div>
-        <% end %>
-      </div>
+      <div class="group-schedule text-center">
         <h2>GROUP SCHEDULE</h2>
-      </div>
+        <div class="group-avatars">
+          <% @group.memberships.each do |membership| %>
+            <div class="group-avatar box-shadow" style="background-image: url('<%= cl_image_path membership.user.photo %>');">
+            </div>
+          <% end %>
+        </div>
+        <div class="calendar-perso">
+          <div class="row">
+            <% x = 0 %>
+            <% while x < 9 do %>
+              <div class="col-xs-12 col-md-4">
+                <div class="calendar-date">
+                  <p><%= (Date.today + x.days).strftime("%A, %b %d")%></p>
+                  <% DateRecipe.get_todays_group_recipes(Date.today + x.days).each do |dr| %>
+                    <%= link_to dr.group_recipe.recipe.name, recipe_path(dr.group_recipe.recipe) %> by <%= dr.user.first_name %>
+                    <%= cl_image_tag dr.user.photo, class: "group-avatar" %>
+                  <% end %>
+                </div>
+              </div>
+              <% x += 1 %>
+            <% end %>
+          </div>
+        </div>
+
       <div class="group-recipes group-background-card flex-column text-center">
         <h2>GROUP RECIPES</h2>
         <% if @group.group_recipes.count == 0 %>
@@ -22,10 +39,12 @@
         <div class="row">
           <% @group.group_recipes.each do |gr| %>
           <div class="col-xs-12 col-md-4">
-            <div class="card-group" style="background-image: url(<%= cl_image_path gr.recipe.photo %>);">
-
-            </div>
+            <%= link_to recipe_path(gr.recipe) do %>
+              <div class="card-group" style="background-image: url(<%= cl_image_path gr.recipe.photo %>);">
+              </div>
+            <% end %>
           </div>
+          <%= link_to "Add to the calendar",  new_group_recipe_date_recipe_path(gr) %>
           <% end %>
         </div>
         <% end %>
@@ -38,4 +57,4 @@
       </div>
     </div>
   </div>
-</div>
+  </div>

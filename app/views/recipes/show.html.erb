@@ -5,8 +5,8 @@
     <div class="recipe-body">
       <div class="recipe-info">
         <h1> <%=@recipe.name.upcase%></h1>
-        <h3> <%=@recipe.time%><i class="fa fa-clock-o" aria-hidden="true"></i></h3>
-        <h3> <%=@recipe.serves%><i class="fa fa-users" aria-hidden="true"></i></h3>
+        <h3><i class="fa fa-clock-o" aria-hidden="true"></i><%=@recipe.time%> minutes</h3>
+        <h3><i class="fa fa-users" aria-hidden="true"></i><%=@recipe.serves%> serves</h3>
       </div>
       <div class="recipe-description text-center">
         <h1>RECETTE</h1>

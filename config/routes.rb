@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     resources :memberships
   end
 
-  resources :group_recipes, only: [ :create ]
+  resources :group_recipes, only: [ :create ] do
+    resources :date_recipes, only: [ :new, :create ]
+  end
 
 end

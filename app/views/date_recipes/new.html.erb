@@ -1,0 +1,5 @@
+<%= simple_form_for [@group_recipe, @date_recipe] do |f| %>
+  <%= f.association :user, class: "form-control"%>
+  <%= f.input :date %>
+  <%= f.submit class: "abtn abtn-lg abtn-prime" %>
+<% end %>
