@@ -6,13 +6,11 @@
 }
 
 .group-card {
-  position: relative;
   display: flex;
   padding: 0px 45px 0 25px;
   align-items: center;
   justify-content: space-between;
   height: 100px;
-  margin-top: 50px;
   margin: 30px auto;
   width: 50%;
   h1 {
@@ -34,8 +32,6 @@
 }
 
 .box-shadow {
-  -webkit-box-shadow: 2px 2px 3px 1px rgba(179,179,179,1);
-  -moz-box-shadow: 2px 2px 3px 1px rgba(179,179,179,1);
   box-shadow: 2px 2px 3px 1px rgba(179,179,179,1);
 }
 
@@ -49,7 +45,6 @@
 
 .group-avatars {
   display: flex;
-  margin-bottom: 25px;
 }
 
 .link-transparent {

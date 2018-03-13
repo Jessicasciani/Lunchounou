@@ -17,9 +17,26 @@
             <div class="text">
               <div class="flex">
                 <h1 class="food"> <%=recipe.name %></h1>
-                <button type="button" class="btn-favorite" data-toggle="modal" data-target="#myModal">
-                <i class="fa fa-heart"></i>
+                <button type="button" class="btn-favorite" data-toggle="modal" data-target="#add-recipe-<%= recipe.id %>">
+                  <i class="fa fa-heart"></i>
                 </button>
+
+                  <div class="modal fade" id="add-recipe-<%= recipe.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <h2>MY GROUPS</h2>
+                        <% if current_user %>
+                          <% current_user.groups_joined.each do |group| %>
+                            <% if group.has_recipe?(recipe)%>
+                              <p> You've already added <%= recipe.name %> to <%= group.name %> </p>
+                            <% else %>
+                              <p><%= link_to group.name, group_recipes_path(group_recipe: {group_id: group,recipe_id: recipe}), method: :post %></p>
+                            <% end %>
+                          <% end %>
+                        <% end %>
+                      </div>
+                    </div>
+                  </div>
               </div>
               <i class="fa fa-clock-o"></i> <%= recipe.time %> min
               <i class="fa fa-users"></i> <%= recipe.serves %> serves
@@ -37,22 +54,7 @@
           </div>
         </div>
 
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <h2>MY GROUPS</h2>
-              <% if current_user %>
-                <% current_user.groups_joined.each do |group| %>
-                  <% unless group.has_recipe?(recipe)%>
-                    <p><%= link_to group.name, group_recipes_path(group_recipe: {group_id: group, recipe_id: recipe}), method: :post %></p>
-                  <% else %>
-                    <p> You've already added this recipe to <%= group.name %> </p>
-                  <% end %>
-                <% end %>
-              <% end %>
-            </div>
-          </div>
-        </div>
+
 
       <% end %>
     </div>
