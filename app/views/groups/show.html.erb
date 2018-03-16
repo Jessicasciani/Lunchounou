@@ -31,23 +31,31 @@
           </div>
         </div>
 
-      <div class="group-recipes group-background-card flex-column text-center">
+      <div class="card-group-container">
         <h2>GROUP RECIPES</h2>
         <% if @group.group_recipes.count == 0 %>
           <p>No recipes ...</p>
         <% else %>
-        <div class="row">
-          <% @group.group_recipes.each do |gr| %>
-          <div class="col-xs-12 col-md-4">
-            <%= link_to recipe_path(gr.recipe) do %>
-              <div class="card-group" style="background-image: url(<%= cl_image_path gr.recipe.photo %>);">
+          <div class="row">
+            <% @group.group_recipes.each do |gr| %>
+              <div class="col-xs-12 col-md-4">
+                <div class="card-group-show">
+                  <%= link_to recipe_path(gr.recipe) do %>
+                    <div class="card-group" style="background-image: url(<%= cl_image_path gr.recipe.photo %>);">
+                    </div>
+                  <% end %>
+                  <%= link_to new_group_recipe_date_recipe_path(gr) do %>
+                   <i class="fa fa-calendar"></i>
+                  <% end %>
+                  <%= link_to group_recipe_path(gr), method: :delete do %>
+                    <i class="fa fa-trash"></i>
+                  <% end %>
+                </div>
               </div>
             <% end %>
           </div>
-          <%= link_to "Add to the calendar",  new_group_recipe_date_recipe_path(gr) %>
-          <% end %>
-        </div>
         <% end %>
+      </div>
 
 
 

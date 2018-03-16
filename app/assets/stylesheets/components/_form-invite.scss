@@ -1,5 +1,4 @@
 .btn-invite {
-  width: 130px;
   font-size: 16px;
   background-color:rgb(138, 216, 225);
   color:white;
@@ -12,18 +11,14 @@
 
 .form-invite {
   select {
-    width: 130px;
+    width: 150px;
   }
 }
 
 .invitation-form {
-    margin: 10px 20px;
-    background-color: white;
-    height: 240px;
-    width: 260px;
-    text-align: center;
-    line-height: 2.2em;
+    margin: 50px auto;
     p {
+      color: grey;
       font-size: 20px;
       margin: 15px 20px;
       line-height: 1.3em;

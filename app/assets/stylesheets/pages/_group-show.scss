@@ -14,13 +14,17 @@
   }
 }
 
-.group-recipes {
-  background-color: transparent !important;
-  h2 {
-    margin-bottom: 15px;
+
+.card-group-show {
+  i {
+    color: grey;
+    text-decoration: none;
+    z-index: 3;
+    &:hover {
+      text-decoration: none;
+    }
   }
 }
-
 .group-schedule {
   height: 750px;
   width: 900px;
@@ -61,10 +65,17 @@
 
 .card-group {
   height: 200px;
-  width: 400px;
+  width: 100%;
   background-size: cover;
   background-position: center;
-  margin: 20px;
+}
+
+.card-group-show {
+  background: white;
 }
 
 
+.card-group-container {
+  color: grey;
+  margin-top: 50px;
+}

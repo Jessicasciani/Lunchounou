@@ -8,6 +8,13 @@ class GroupRecipesController < ApplicationController
     end
   end
 
+  def destroy
+    @group_recipe = GroupRecipe.find(params[:id])
+    @group_recipe.destroy
+    redirect_to group_path(@group_recipe.group)
+  end
+
+
   private
 
   def group_recipe_params
