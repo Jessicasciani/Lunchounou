@@ -13,7 +13,7 @@ class ChatRoom < ApplicationRecord
   # belongs_to :user
 
   def self.between(sender_id, receiver_id)
-    where("sender_id  = ? AND receiver_id = ?" , sender_id, receiver_id)
+    where("sender_id  = ? AND receiver_id = ? OR sender_id  = ? AND receiver_id = ?" , sender_id, receiver_id, receiver_id, sender_id)
   end
 
 end
