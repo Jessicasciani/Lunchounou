@@ -16,4 +16,8 @@ Rails.application.routes.draw do
     resources :date_recipes, only: [ :new, :create ]
   end
 
+  resources :chat_rooms do
+    resources :messages
+  end
+
 end

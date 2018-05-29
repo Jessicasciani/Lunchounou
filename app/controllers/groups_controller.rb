@@ -17,6 +17,7 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
     @invitation = Invitation.new
     @date_recipe = DateRecipe.new
+
   end
 
   def index

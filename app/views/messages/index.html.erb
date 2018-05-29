@@ -1,0 +1,11 @@
+
+
+ <% @messages.each do |message| %>
+  <%= message.content %>
+<% end %>
+
+<%= simple_form_for [@chat_room, @message] do |f| %>
+    <%= f.text_area :content %>
+    <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
+   <%= f.submit "Send" %>
+<% end %>

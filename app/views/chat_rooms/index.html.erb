@@ -1,0 +1,19 @@
+  <% @chat_room.each do |chat_room| %>
+   <% if chat_room.sender_id == current_user.id || chat_room.receiver_id == current_user.id %>
+    <% if chat_room.sender_id == current_user.id %>
+      <% receiver = User.find(chat_room.receiver_id) %>
+    <% else %>
+      <% receiver = User.find(chat_room.sender_id) %>
+    <% end %>
+    <%= link_to receiver.first_name, chat_room_messages_path(chat_room)%>
+   <% end %>
+  <% end %>
+
+
+ <h3>All Users</h3>
+   <% @users.each do |user| %>
+    <% if user.id != current_user.id %>
+   <%= user.first_name %> <%= link_to ‘Message me!’, chat_room_path(sender_id: current_user.id, receiver_id: user.id), method: ‘post’%>
+
+  <% end %>
+ <% end %>

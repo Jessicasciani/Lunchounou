@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180312194207) do
+ActiveRecord::Schema.define(version: 20180529121700) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "chat_rooms", force: :cascade do |t|
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "sender_id"
+    t.integer  "receiver_id"
+    t.index ["receiver_id"], name: "index_chat_rooms_on_receiver_id", using: :btree
+    t.index ["sender_id"], name: "index_chat_rooms_on_sender_id", using: :btree
+  end
 
   create_table "date_recipes", force: :cascade do |t|
     t.datetime "created_at",      null: false
@@ -62,6 +71,16 @@ ActiveRecord::Schema.define(version: 20180312194207) do
     t.datetime "updated_at", null: false
     t.index ["group_id"], name: "index_memberships_on_group_id", using: :btree
     t.index ["user_id"], name: "index_memberships_on_user_id", using: :btree
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "content"
+    t.integer  "chat_room_id"
+    t.integer  "user_id"
+    t.index ["chat_room_id"], name: "index_messages_on_chat_room_id", using: :btree
+    t.index ["user_id"], name: "index_messages_on_user_id", using: :btree
   end
 
   create_table "recipes", force: :cascade do |t|

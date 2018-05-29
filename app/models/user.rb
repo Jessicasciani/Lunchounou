@@ -6,7 +6,9 @@ class User < ApplicationRecord
   validates :photo, presence: true
 
   has_many :memberships
+  has_many :chat_rooms
   has_many :invitations
+  has_many :messages, dependent: :destroy
   has_many :groups_joined, through: :memberships, source: :group
   mount_uploader :photo, PhotoUploader
 
