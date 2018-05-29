@@ -11,7 +11,6 @@
           <% @group.memberships.each do |membership| %>
             <div class="group-avatar box-shadow" style="background-image: url('<%= cl_image_path membership.user.photo %>');">
             </div>
-            <h1>allo</h1>
             <%= link_to "Send a message", chat_rooms_path(chat_room: {sender_id: current_user.id,receiver_id: membership.user.id}), method: :post %>
           <% end %>
         </div>
