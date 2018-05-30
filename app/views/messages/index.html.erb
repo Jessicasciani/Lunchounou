@@ -1,11 +1,28 @@
 
+<div class="container">
 
- <% @messages.each do |message| %>
-  <%= message.content %>
-<% end %>
+  <div class="messages-container">
+    <% @messages.each do |message| %>
+      <% if message.user == current_user %>
+        <div class="sender-message">
+          <p><%= message.user.first_name %></p>
+          <p><%= message.content %></p>
+        </div>
+      <% else %>
+        <div class="receiver-message">
+          <p><%= message.user.first_name %></p>
+          <p><%= message.content %></p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 
-<%= simple_form_for [@chat_room, @message] do |f| %>
-    <%= f.text_area :content %>
-    <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
-   <%= f.submit "Send" %>
-<% end %>
+  <div class="message-box">
+    <%= simple_form_for [@chat_room, @message] do |f| %>
+        <%= f.text_area :content %>
+        <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
+       <%= f.submit "Send" %>
+    <% end %>
+  </div>
+
+</div>
